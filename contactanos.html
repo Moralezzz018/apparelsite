@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactanos | Los Pinos Apparel</title>
+  <link rel="stylesheet" href="/Styles/styles.css">
+  <link rel="stylesheet" href="/Styles/Contactanos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <script src="/Scripts/Java.js"></script>
+</head>
+<body>
+  <div id="header-container"></div>
+  
+  <!-- Información de Contacto -->
+  <section class="contacto-info">
+    <div class="container">
+      <div class="contacto-grid">
+        <div class="contacto-card">
+          <div class="contacto-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h3>Teléfono</h3>
+          <p>+504 2773-5353</p>
+          <p>Mismo número para Whatsapp</p>
+        </div>
+        
+        <div class="contacto-card">
+          <div class="contacto-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Email</h3>
+          <p>info@lospinosapparel.com</p>
+          <p>ventas@lospinosapparel.com</p>
+        </div>
+        
+        <div class="contacto-card">
+          <div class="contacto-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Ubicación</h3>
+          <p>Barrio Saragoza, 19 avenida, 7 calle Siguatepeque, Comayagua, Honduras</p>
+        </div>
+        
+        <div class="contacto-card">
+          <div class="contacto-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Horarios</h3>
+          <p>Lunes - Jueves: 7:00 AM - 5:00 PM</p>
+          <p>Viernes: 7:00 AM - 4:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de Contacto -->
+  <section class="contacto-formulario">
+    <div class="container">
+      <h2>Envíanos un Mensaje</h2>
+      <form class="formulario-contacto" id="contacto-form">
+        <div class="form-row">
+          <div class="form-grupo">
+            <label for="nombre">Nombre Completo *</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="form-grupo">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-grupo">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono">
+          </div>
+          <div class="form-grupo">
+            <label for="asunto">Asunto *</label>
+            <select id="asunto" name="asunto" required>
+              <option value="">Selecciona un asunto</option>
+              <option value="consulta">Consulta General</option>
+              <option value="ventas">Información de Ventas</option>
+              <option value="soporte">Soporte Técnico</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-grupo">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+        </div>
+        
+        <div class="form-botones">
+          <button type="submit" class="boton-enviar">
+            <i class="fas fa-paper-plane"></i>
+            Enviar Mensaje
+          </button>
+          <button type="reset" class="boton-limpiar">
+            <i class="fas fa-undo"></i>
+            Limpiar
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="contacto-faq">
+    <div class="container">
+      <h2>Preguntas Frecuentes</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-pregunta">
+            <h3>¿Cuáles son los métodos de pago aceptados?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-respuesta">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-pregunta">
+            <h3>¿Cuánto tiempo toma el envío?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-respuesta">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cum a fugiat voluptatum odit ad praesentium perspiciatis ex, expedita sint obcaecati id provident et unde. Ullam doloremque sunt animi quisquam?</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-pregunta">
+            <h3>¿Ofrecen servicios de personalización?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-respuesta">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cum a fugiat voluptatum odit ad praesentium perspiciatis ex, expedita sint obcaecati id provident et unde. Ullam doloremque sunt animi quisquam?</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-pregunta">
+            <h3>¿Tienen garantía en sus productos?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-respuesta">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium cum a fugiat voluptatum odit ad praesentium perspiciatis ex, expedita sint obcaecati id provident et unde. Ullam doloremque sunt animi quisquam?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Redes Sociales -->
+  <section class="contacto-redes">
+    <div class="container">
+      <h2>Síguenos en Redes Sociales</h2>
+      <div class="redes-grid">
+        <a href="#" class="red-social">
+          <i class="fab fa-facebook"></i>
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/lospinosapparel/" class="red-social" target="_blank">
+          <i class="fab fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.linkedin.com/company/los-pinos-apparel/?originalSubdomain=hn" class="red-social" target="_blank">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="#" class="red-social">
+          <i class="fab fa-twitter"></i>
+          <span>X</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- <div id="footer-container"></div> -->
+
+
+</body>
+</html>

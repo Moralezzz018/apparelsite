@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros | Los Pinos Apparel</title>
+  <link rel="stylesheet" href="/Styles/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <script src="/Scripts/Java.js"></script>
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+  <!-- Hero Section Estático -->
+  <section class="hero-static">
+    <div class="hero-static-container">
+      <img src="/Imagenes/Carrusel_Nosotros.webp" alt="Nosotros" class="hero-static-image" />
+      <div class="hero-static-caption">
+        <h1>
+          Nuestra Historia, Filosofía, Visión, Misión <br />
+          y Valores
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Historia y Filosofía -->
+  <section class="historia-filosofia">
+    <div class="container">
+      <div class="historia-container">
+        <div class="historia-texto">
+          <h2>Historia</h2>
+          <p>
+            El grupo Karims se inició sólidamente en Pakistán y se estableció en
+            Honduras en el año de 1991. Actualmente se encuentra presente en
+            Hong-Kong, Miami, Guatemala, Honduras, El Salvador, Republica
+            Dominicana y México. Los Pinos Apparel, nace como una empresa del
+            grupo, el 1 de abril del 2023, en la ciudad de Siguatepeque.
+            Dedicándose a la manufactura de uniformes de alta calidad para
+            exportación. Actualmente se tienen proyectos de expansión .
+          </p>
+
+          <p>
+            Fundada con valores sólidos y una misión clara, nuestra empresa ha
+            crecido de manera sostenible, siempre respetando nuestros principios
+            fundamentales y adaptándonos a las necesidades cambiantes del
+            mercado global.
+          </p>
+        </div>
+        <div class="historia-imagen">
+          <img src="/Imagenes/Carrusel5.webp" alt="Historia" />
+        </div>
+      </div>
+
+      <div class="linea-divisoria"></div>
+
+      <div class="filosofia-seccion">
+        <h2>Filosofía</h2>
+        <p>
+          Nuestra filosofía se basa en tres pilares fundamentales: la
+          excelencia en la calidad, el compromiso con la sostenibilidad y el
+          desarrollo integral de nuestra comunidad. Creemos que el éxito
+          empresarial debe ir de la mano con el progreso social y la
+          protección ambiental.
+        </p>
+        <p>
+          En Los Pinos Apparel, cada decisión que tomamos está guiada por
+          estos principios, desde la selección de materiales hasta las
+          prácticas laborales, siempre buscando el equilibrio perfecto entre
+          rentabilidad y responsabilidad.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="compromiso">
+    <img src="/Imagenes/FondoCarrusel.webp" alt="Compromiso" />
+    <div class="contenedor-compromiso">
+      <h1 class="titulo">Compromiso con el Presente, <br> Proyección hacia el Futuro</h1>
+    </div>
+  </section>
+
+  <!-- Sección Misión -->
+  <section class="mision">
+    <div class="container">
+      <div class="mision-container">
+        <div class="mision-texto">
+          <h2>Misión</h2>
+          <p>
+            Ofrecer productos y servicios de calidad que superen las expectativas
+            de nuestros clientes, asegurando calidad de vida para nuestros asociados,
+            siempre comprometidos con la responsabilidad social.
+          </p>
+        </div>
+        <div class="mision-imagen">
+          <img src="/Imagenes/Carrusel6.webp" alt="Misión" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Visión -->
+  <section class="vision">
+    <div class="container">
+      <h2>Visión</h2>
+      <div class="vision-table">
+        <div class="vision-row" data-category="calidad">
+          <div class="vision-header">
+            <h3>Liderazgo con Propósito Humano</h3>
+            <button class="expand-btn" onclick="toggleVision(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          <div class="vision-content">
+            <p>Nuestra visión va más allá de la manufactura: buscamos transformar vidas a través de la excelencia, la ética y el compromiso con la calidad.</p>
+          </div>
+        </div>
+        
+        <div class="vision-row" data-category="innovacion">
+          <div class="vision-header">
+            <h3>Excelencia Textil con Impacto Social</h3>
+            <button class="expand-btn" onclick="toggleVision(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          <div class="vision-content">
+            <p>Aspiramos a ser líderes en manufactura, combinando procesos eficientes, productos competitivos y un enfoque centrado en el bienestar de nuestros colaboradores y sus familias.</p>
+          </div>
+        </div>
+        
+        <div class="vision-row" data-category="sostenibilidad">
+          <div class="vision-header">
+            <h3>Construyendo Futuro con Calidad y Valores</h3>
+            <button class="expand-btn" onclick="toggleVision(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          <div class="vision-content">
+            <p>Nuestra visión integra la más alta calidad en productos y procesos con una misión ética que impulsa el crecimiento humano y profesional de nuestro equipo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Línea divisoria entre Visión y Valores -->
+  <div class="linea-divisoria"></div>
+  
+  <!-- Sección Valores -->
+  <section class="valores">
+    <div class="container">
+      <h2 class="valores-titulo">Nuestros Valores</h2>
+      
+      <div class="valores-grid">
+        <div class="valor-item">
+          <div class="valor-imagen">
+            <img src="/Imagenes/Valores1.jpeg" alt="Integridad"/>
+          </div>
+          <div class="valor-contenido">
+            <h3>Integridad</h3>
+            <p>La conducta de la empresa está guiada por principios éticos sólidos, actuando con transparencia y manteniendo la coherencia entre lo que se dice y lo que se hace.</p>
+          </div>
+        </div>
+
+        <div class="valor-item">
+          <div class="valor-imagen">
+            <img src="/Imagenes/Valores2.jpeg" alt="Responsabilidad"/>
+          </div>
+          <div class="valor-contenido">
+            <h3>Responsabilidad</h3>
+            <p>Cada miembro del equipo asume con seriedad sus deberes, cumpliendo con sus obligaciones y enfrentando las consecuencias de sus decisiones.</p>
+          </div>
+        </div>
+
+        <div class="valor-item">
+          <div class="valor-imagen">
+            <img src="/Imagenes/Valores3.jpeg" alt="Compromiso"/>
+          </div>
+          <div class="valor-contenido">
+            <h3>Compromiso</h3>
+            <p>La dedicación a los objetivos y valores de la empresa asegura que cada acción esté alineada con la misión y visión organizacional.</p>
+          </div>
+        </div>
+
+        <div class="valor-item">
+          <div class="valor-imagen">
+            <img src="/Imagenes/valores4.jpeg" alt="Respeto"/>
+          </div>
+          <div class="valor-contenido">
+            <h3>Respeto</h3>
+            <p>La empresa valora la diversidad y trata a todos con dignidad, asegurando un ambiente inclusivo y armonioso.</p>
+          </div>
+        </div>
+
+        <div class="valor-item">
+          <div class="valor-imagen">
+            <img src="/Imagenes/valores5.jpeg" alt="Liderazgo"/>
+          </div>
+          <div class="valor-contenido">
+            <h3>Liderazgo</h3>
+            <p>Inspirar a otros mediante el ejemplo, fomentando una cultura de motivación, innovación y orientación a resultados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div id="footer-container"></div>
+</body>
+
+</html>

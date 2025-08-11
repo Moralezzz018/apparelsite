@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsabilidades | Los Pinos Apparel</title>
+    <link rel="stylesheet" href="/Styles/styles.css"/>
+    <link rel="stylesheet" href="/Styles/Responsabilidades.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="/Scripts/Java.js"></script>
+  </head>
+  <body class="responsabilidades-page">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Hero Carrusel -->
+    <section class="hero responsabilidades-hero">
+      <div class="carousel-container responsabilidades-carousel">
+        <div class="carousel-slide">
+          <div class="carousel-item" data-image="FondoCarrusel">
+            <img
+              src="/Imagenes/Carrusel_Responsabilidades.webp"
+              alt="Carrusel 1"
+            />
+          </div>
+          <div class="carousel-item" data-image="Carrusel3">
+            <img src="/Imagenes/Mision.jpg" alt="Carrusel 2" />
+          </div>
+        </div>
+
+        <!-- Flechas de navegación -->
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+
+        <!-- Indicadores de puntos -->
+        <div class="carousel-indicators">
+          <span class="carousel-indicator active" onclick="goToSlide(0)"></span>
+          <span class="carousel-indicator" onclick="goToSlide(1)"></span>
+        </div>
+
+        <!-- Captión del carrusel -->
+        <div class="carousel-caption">
+          <h1 id="carousel-text">RESPONSABILIDADES</h1>
+        </div>
+      </div>
+    </section>
+
+       <!-- Responsabilidades Texto -->
+    <section class="responsabilidad-texto">
+       <div class="responsabilidades-texto-container">
+         <h2>Nuestra Responsabilidad</h2>
+         <p class="responsabilidades-texto-parrafo">
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minus
+           autem sit, amet suscipit eius assumenda quo deleniti itaque possimus
+           omnis numquam delectus optio, nam fugiat atque, laudantium aperiam
+           deserunt aliquam fuga culpa debitis! Minus quaerat voluptatem impedit
+           earum tenetur?a
+         </p>
+       </div>
+     </section>
+
+     <section class="imagenresponsabilidades">
+      <img src="/Imagenes/Responsabilidadesimg.webp" alt="Responsabilidades">
+     </section>
+
+     <section class="targetasresponsabilidades">
+       <div class="container">
+         <div class="targetasresponsabilidades-grid">
+           <div class="targeta-responsabilidad">
+             <img src="/Imagenes/Inicio - 3.webp" alt="Respeto por el Medio Ambiente">
+             <h3>RESPETO POR EL MEDIO AMBIENTE</h3>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minus autem sit, amet suscipit eius assumenda quo deleniti itaque possimus omnis numquam delectus optio, nam fugiat atque, laudantium aperiam deserunt aliquam fuga culpa debitis!</p>
+           </div>
+           
+           <div class="targeta-responsabilidad">
+             <img src="/Imagenes/inicio - 4.webp" alt="Respeto por las Personas">
+             <h3>RESPETO POR LAS PERSONAS</h3>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minus autem sit, amet suscipit eius assumenda quo deleniti itaque possimus omnis numquam delectus optio, nam fugiat atque, laudantium aperiam deserunt aliquam fuga culpa debitis!</p>
+           </div>
+           
+           <div class="targeta-responsabilidad">
+             <img src="/Imagenes/Mision.jpg" alt="Respeto por la Transparencia">
+             <h3>RESPETO POR LA TRANSPARENCIA</h3>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minus autem sit, amet suscipit eius assumenda quo deleniti itaque possimus omnis numquam delectus optio, nam fugiat atque, laudantium aperiam deserunt aliquam fuga culpa debitis!</p>
+           </div>
+         </div>
+       </div>
+     </section>
+
+      <!-- Actividades Responsabilidades -->
+      <section class="actividadesresponsabilidades">
+        <div class="container">
+          <h2>ACTIVIDADES</h2>
+          <div class="actividades-grid">
+            <div class="actividad-item">
+              <div class="actividad-texto">
+                <h3>ACTIVIDADES SOCIALES</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minus autem sit, amet suscipit eius assumenda quo deleniti itaque possimus omnis numquam delectus optio, nam fugiat atque, laudantium aperiam deserunt aliquam fuga culpa debitis!</p>
+              </div>
+              <div class="actividad-imagen">
+                <img src="/Imagenes/Inicio - 5.webp" alt="Actividades Sociales">
+              </div>
+            </div>
+            
+            <div class="actividad-item">
+              <div class="actividad-texto">
+                <h3>FERIA DE EMPLEO</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minus autem sit, amet suscipit eius assumenda quo deleniti itaque possimus omnis numquam delectus optio, nam fugiat atque, laudantium aperiam deserunt aliquam fuga culpa debitis!</p>
+              </div>
+              <div class="actividad-imagen">
+                <img src="/Imagenes/inicio - 6.webp" alt="Feria de Empleo">
+              </div>
+            </div>
+            
+            <div class="actividad-item">
+              <div class="actividad-texto">
+                <h3>BRIGADAS</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minus autem sit, amet suscipit eius assumenda quo deleniti itaque possimus omnis numquam delectus optio, nam fugiat atque, laudantium aperiam deserunt aliquam fuga culpa debitis!</p>
+              </div>
+              <div class="actividad-imagen">
+                <img src="/Imagenes/Inicio - 4.webp" alt="Brigadas">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    
+    <script>
+      // Script específico para la página de Responsabilidades
+      document.addEventListener('DOMContentLoaded', function() {
+        // Esperar un poco más para asegurar que el header esté completamente cargado
+        setTimeout(() => {
+          // Verificar si el menú móvil ya está inicializado
+          const hamburgerMenu = document.getElementById('hamburger-menu');
+          const navMenu = document.getElementById('nav-menu');
+          
+          if (hamburgerMenu && navMenu) {
+            console.log('Elementos del menú encontrados en Responsabilidades, inicializando...');
+            
+            // Agregar event listeners directamente si no están funcionando
+            if (!hamburgerMenu.hasAttribute('data-initialized')) {
+              hamburgerMenu.setAttribute('data-initialized', 'true');
+              
+              hamburgerMenu.addEventListener('click', function() {
+                navMenu.classList.add('active');
+                hamburgerMenu.classList.add('active');
+                const overlay = document.getElementById('menu-overlay');
+                if (overlay) overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+              });
+              
+              // Cerrar menú con overlay
+              const overlay = document.getElementById('menu-overlay');
+              if (overlay) {
+                overlay.addEventListener('click', function() {
+                  navMenu.classList.remove('active');
+                  hamburgerMenu.classList.remove('active');
+                  overlay.classList.remove('active');
+                  document.body.style.overflow = '';
+                });
+              }
+              
+              // Cerrar menú con botón X
+              const closeBtn = document.getElementById('close-menu');
+              if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                  navMenu.classList.remove('active');
+                  hamburgerMenu.classList.remove('active');
+                  const overlay = document.getElementById('menu-overlay');
+                  if (overlay) overlay.classList.remove('active');
+                  document.body.style.overflow = '';
+                });
+              }
+              
+              console.log('Menú móvil inicializado manualmente en Responsabilidades');
+            }
+          }
+        }, 500);
+      });
+    </script>
+  </body>
+</html>

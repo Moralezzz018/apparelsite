@@ -1,0 +1,562 @@
+/* ========================================
+   PÁGINA RESPONSABILIDADES - ESTILOS OPTIMIZADOS
+   ======================================== */
+
+/* Variables CSS */
+:root {
+  --responsabilidades-bg: #0c1a05;
+  --responsabilidades-text: white;
+  --responsabilidades-accent: #183206;
+  --responsabilidades-secondary: #2e600b;
+  --responsabilidades-spacing: clamp(2rem, 4vw, 5rem);
+}
+
+/* ========================================
+   CORRECCIÓN DE LÍNEA BLANCA
+   ======================================== */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.responsabilidades-hero {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Asegurar que no haya espacios en blanco */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   MEJORAS DEL MENÚ HAMBURGUESA
+   ======================================== */
+.hamburger-menu {
+  z-index: 1001;
+}
+
+.nav-menu {
+  z-index: 1000;
+}
+
+.menu-overlay {
+  z-index: 999;
+}
+
+/* Asegurar que el header esté correctamente posicionado */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* ========================================
+   SECCIÓN PRINCIPAL RESPONSABILIDADES
+   ======================================== */
+.responsabilidades {
+  background-color: var(--responsabilidades-bg);
+  padding: var(--responsabilidades-spacing) 0;
+  color: var(--responsabilidades-text);
+}
+
+.responsabilidades .container {
+  max-width: min(1400px, 95%);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+}
+
+.responsabilidades-titulo {
+  text-align: left;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+}
+
+/* ========================================
+   GRID DE TARJETAS
+   ======================================== */
+.tarjetas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+.tarjeta {
+  background: #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta-imagen {
+  height: clamp(150px, 20vw, 200px);
+  overflow: hidden;
+}
+
+.tarjeta-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tarjeta-contenido {
+  padding: clamp(1.25rem, 2vw, 1.5rem);
+  color: black;
+}
+
+.tarjeta-contenido h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.tarjeta-contenido p {
+  font-size: clamp(0.9rem, 1.6vw, 0.95rem);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  color: #666;
+}
+
+.tarjeta-contenido .boton {
+  background-color: #666;
+  color: white;
+  border: none;
+  padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(1.25rem, 2.5vw, 1.5rem);
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Lato", sans-serif;
+}
+
+.tarjeta-contenido .boton:hover {
+  background-color: #888;
+}
+
+/* ========================================
+   BOTONES ACTIVOS
+   ======================================== */
+.responsabilidad-btn.activo {
+  background-color: var(--responsabilidades-accent) !important;
+  color: white !important;
+}
+
+/* ========================================
+   CONTENIDO DINÁMICO
+   ======================================== */
+.responsabilidad-contenido {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  min-height: 400px;
+  transition: all 0.3s ease;
+}
+
+.contenido-placeholder {
+  text-align: center;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 2.5vw, 1.25rem);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.contenido-placeholder h3 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-bottom: 1.25rem;
+  color: var(--responsabilidades-text);
+  font-weight: 600;
+}
+
+.contenido-placeholder p {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* ========================================
+   DETALLE DE RESPONSABILIDAD
+   ======================================== */
+.responsabilidad-detalle {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.responsabilidad-header {
+  background: linear-gradient(135deg, var(--responsabilidades-accent), var(--responsabilidades-secondary));
+  padding: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.responsabilidad-header h2 {
+  color: white;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.responsabilidad-header h2::after {
+  display: none;
+}
+
+.responsabilidad-body {
+  display: flex;
+  gap: clamp(2rem, 4vw, 2.5rem);
+  padding: clamp(2rem, 4vw, 2.5rem);
+}
+
+.responsabilidad-imagen {
+  flex: 0 0 clamp(250px, 25vw, 300px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.responsabilidad-imagen img {
+  width: 100%;
+  height: clamp(200px, 20vw, 250px);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.responsabilidad-imagen:hover img {
+  transform: scale(1.05);
+}
+
+.responsabilidad-info {
+  flex: 1;
+  color: #333;
+}
+
+.responsabilidad-descripcion {
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.responsabilidad-descripcion p {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+.responsabilidad-caracteristicas {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+
+.responsabilidad-caracteristica {
+  background: #f8f9fa;
+  padding: clamp(1.25rem, 2.5vw, 1.5rem);
+  border-radius: 10px;
+  border-left: 4px solid var(--responsabilidades-accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.responsabilidad-caracteristica:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.responsabilidad-caracteristica h4 {
+  color: var(--responsabilidades-accent);
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-weight: 700;
+  margin: 0 0 0.8rem 0;
+}
+
+.responsabilidad-caracteristica p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================
+   CARRUSEL DE RESPONSABILIDADES
+   ======================================== */
+.responsabilidades-carousel .carousel-slide {
+  width: 200%;
+}
+
+.responsabilidades-carousel .carousel-item {
+  flex: 0 0 50%;
+  height: 100%;
+  width: 50%;
+  min-width: 50%;
+}
+
+/* ========================================
+   SECCIÓN TEXTO RESPONSABILIDAD
+   ======================================== */
+.responsabilidad-texto {
+  background-color: var(--responsabilidades-accent);
+  padding: var(--responsabilidades-spacing) 0;
+  color: var(--responsabilidades-text);
+}
+
+.responsabilidades-texto-container {
+  max-width: min(1200px, 95%);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+  text-align: center;
+}
+
+.responsabilidades-texto-container h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  color: white;
+}
+
+.responsabilidades-texto-container h2::after {
+  display: none;
+}
+
+.responsabilidades-texto-parrafo {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  line-height: 1.8;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+/* ========================================
+   SECCIÓN IMAGEN RESPONSABILIDADES
+   ======================================== */
+.imagenresponsabilidades {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.imagenresponsabilidades img {
+  width: 100%;
+  height: clamp(200px, 25vw, 400px);
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ========================================
+   SECCIÓN TARJETAS RESPONSABILIDADES
+   ======================================== */
+.targetasresponsabilidades {
+  background-color: var(--responsabilidades-secondary);
+  padding: var(--responsabilidades-spacing) 0;
+  color: var(--responsabilidades-text);
+}
+
+.targetasresponsabilidades .container {
+  max-width: min(1200px, 95%);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+}
+
+.targetasresponsabilidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: clamp(2rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
+.targeta-responsabilidad {
+  background-color: var(--responsabilidades-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(1rem, 2vw, 1.25rem);
+  padding: clamp(0.75rem, 2vw, 1rem);
+  border-radius: 10px;
+}
+
+.targeta-responsabilidad img {
+  width: clamp(80px, 15vw, 150px);
+  height: clamp(80px, 15vw, 150px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.targeta-responsabilidad:hover img {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.targeta-responsabilidad h3 {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.targeta-responsabilidad p {
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 300px;
+}
+
+/* ========================================
+   SECCIÓN ACTIVIDADES RESPONSABILIDADES
+   ======================================== */
+.actividadesresponsabilidades {
+  background-color: var(--responsabilidades-bg);
+  padding: var(--responsabilidades-spacing) 0;
+  color: var(--responsabilidades-text);
+}
+
+.actividadesresponsabilidades .container {
+  max-width: min(1200px, 95%);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2.5rem);
+}
+
+.actividadesresponsabilidades h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  color: white;
+}
+
+.actividadesresponsabilidades h2::after {
+  display: none;
+}
+
+.actividades-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 2.5rem);
+}
+
+.actividad-item {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 2.5rem);
+  min-height: clamp(250px, 30vw, 300px);
+}
+
+.actividad-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.actividad-texto {
+  flex: 1;
+  background-color: var(--responsabilidades-secondary);
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.actividad-texto h3 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: clamp(1rem, 2vw, 1.25rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.actividad-texto p {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.actividad-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actividad-imagen img {
+  width: 100%;
+  max-width: clamp(300px, 40vw, 500px);
+  height: clamp(200px, 25vw, 300px);
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .responsabilidad-body {
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .responsabilidad-imagen {
+    flex: none;
+    width: 100%;
+  }
+
+  .actividad-item {
+    flex-direction: column !important;
+    gap: clamp(1.25rem, 2.5vw, 1.5rem);
+    min-height: auto;
+  }
+
+  .actividad-texto {
+    order: 1;
+  }
+
+  .actividad-imagen {
+    order: 2;
+    width: 100%;
+  }
+
+  .actividad-imagen img {
+    width: 100%;
+    height: clamp(180px, 25vw, 250px);
+    max-width: none;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .targetasresponsabilidades-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .targeta-responsabilidad p {
+    max-width: 400px;
+  }
+}
