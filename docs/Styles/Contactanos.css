@@ -81,8 +81,10 @@
 
 .contacto-card p {
   color: var(--contacto-text);
-  line-height: 1.6;
+  line-height: 1.7 !important;
   margin-bottom: 8px;
+  font-size: 1.15rem !important;
+  text-align: center!important; /* Excepción: sin justificación para las tarjetas */
 }
 
 .contacto-card p:last-child {

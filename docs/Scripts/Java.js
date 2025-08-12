@@ -77,7 +77,7 @@ const PageManager = {
             carouselType: null,
             initFunction: null
         },
-        'contactanos.html': {
+        'Contactanos.html': {
             hasCarousel: false,
             carouselType: null,
             initFunction: 'initContactFAQ'
@@ -396,6 +396,7 @@ const CarouselManager = {
         
         // Inicializar
         updateCarousel();
+        
         Utils.log(`Carrusel ${type} inicializado exitosamente`);
     },
     
@@ -790,35 +791,206 @@ const PageSpecificManager = {
 // GESTOR DE CARGA DE PÁGINA
 // ========================================
 const PageLoadingManager = {
-    // Manejar el estado de carga de la página
-    handlePageLoading() {
+    // Estado de carga
+    isInitialized: false,
+    isPageFullyLoaded: false,
+    
+    // Mensajes de estado de carga
+    loadingMessages: [
+        'Inicializando aplicación...',
+        'Cargando componentes...',
+        'Preparando carrusel...',
+        'Cargando imágenes...',
+        'Finalizando configuración...',
+        '¡Listo!'
+    ],
+    
+    // Inicializar el gestor de carga
+    init() {
+        this.isInitialized = true;
+        this.isPageFullyLoaded = false;
+        
+        // Mostrar mensaje inicial
+        this.updateLoadingMessage(0);
+        
+        Utils.log('Gestor de carga inicializado - esperando carga real de la página');
+        
+        // Iniciar monitoreo real de la carga
+        this.startRealPageLoading();
+    },
+    
+    // Iniciar monitoreo real de la carga de la página
+    startRealPageLoading() {
+        // Esperar a que el DOM esté completamente listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                this.onDOMReady();
+            });
+        } else {
+            this.onDOMReady();
+        }
+    },
+    
+    // Cuando el DOM está listo
+    onDOMReady() {
+        Utils.log('DOM listo - iniciando carga real de elementos');
+        this.updateLoadingMessage(1);
+        
+        // Monitorear carga real de imágenes
+        this.monitorRealImageLoading();
+        
+        // Monitorear carga del carrusel
+        this.monitorCarouselLoading();
+        
+        // Monitorear carga de fuentes
+        this.monitorFontLoading();
+        
+        // Verificar si ya está todo listo
+        this.checkIfPageIsReady();
+    },
+    
+    // Monitorear carga real de imágenes
+    monitorRealImageLoading() {
+        const criticalImages = document.querySelectorAll('img[src*="/Imagenes/"]');
+        
+        if (criticalImages.length === 0) {
+            Utils.log('No se encontraron imágenes críticas');
+            return;
+        }
+        
+        Utils.log(`Monitoreando carga real de ${criticalImages.length} imágenes críticas`);
+        this.updateLoadingMessage(3);
+        
+        let loadedImages = 0;
+        const totalImages = criticalImages.length;
+        
+        const markImageLoaded = () => {
+            loadedImages++;
+            Utils.log(`Imagen realmente cargada: ${loadedImages}/${totalImages}`);
+            
+            if (loadedImages === totalImages) {
+                Utils.log('Todas las imágenes están realmente cargadas');
+                this.checkIfPageIsReady();
+            }
+        };
+        
+        criticalImages.forEach(img => {
+            if (img.complete && img.naturalWidth > 0) {
+                // La imagen ya está completamente cargada
+                markImageLoaded();
+            } else {
+                // Esperar a que la imagen se cargue realmente
+                img.addEventListener('load', markImageLoaded);
+                img.addEventListener('error', () => {
+                    Utils.log(`Error al cargar imagen, pero continuando`);
+                    markImageLoaded();
+                });
+            }
+        });
+    },
+    
+    // Monitorear carga del carrusel
+    monitorCarouselLoading() {
+        this.updateLoadingMessage(2);
+        
+        // Esperar a que el carrusel esté realmente funcional
+        const checkCarousel = () => {
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            
+            if (carouselSlide && indicators.length > 0) {
+                Utils.log('Carrusel está realmente funcional');
+                this.checkIfPageIsReady();
+            } else {
+                // Reintentar en 100ms
+                setTimeout(checkCarousel, 100);
+            }
+        };
+        
+        checkCarousel();
+    },
+    
+    // Monitorear carga de fuentes
+    monitorFontLoading() {
+        // Verificar si las fuentes de Google están cargadas
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(() => {
+                Utils.log('Fuentes de Google cargadas');
+                this.checkIfPageIsReady();
+            });
+        } else {
+            // Fallback: esperar un tiempo razonable
+            setTimeout(() => {
+                Utils.log('Fuentes asumidas como cargadas (fallback)');
+                this.checkIfPageIsReady();
+            }, 1000);
+        }
+    },
+    
+    // Verificar si la página está realmente lista
+    checkIfPageIsReady() {
+        // Solo marcar como lista si no se ha marcado antes
+        if (this.isPageFullyLoaded) return;
+        
+        this.isPageFullyLoaded = true;
+        Utils.log('Página completamente cargada en el fondo - ocultando spinner');
+        this.updateLoadingMessage(5); // "¡Listo!"
+        
+        // Ocultar spinner después de un breve delay para mostrar "¡Listo!"
+        setTimeout(() => {
+            this.hideLoadingSpinner();
+        }, 500);
+    },
+    
+    // Ocultar el spinner de carga
+    hideLoadingSpinner() {
         const loadingSpinner = document.getElementById('loading-spinner');
         const mainContent = document.getElementById('main-content');
         
         if (loadingSpinner && mainContent) {
-            // Ocultar el spinner de carga
+            // Ocultar el spinner
             loadingSpinner.classList.add('hidden');
             
-            // Mostrar el contenido principal con animación
-            setTimeout(() => {
-                mainContent.classList.add('page-loaded');
-            }, 100);
+            // Mostrar el contenido principal
+            mainContent.classList.add('page-loaded');
             
-            // Remover el spinner completamente después de la animación
+            // Remover el spinner completamente
+            setTimeout(() => {
+                loadingSpinner.remove();
+            }, 400);
+            
+            Utils.log('Spinner ocultado y página mostrada');
+        }
+    },
+    
+    // Actualizar el mensaje de carga
+    updateLoadingMessage(index) {
+        const loadingMessageElement = document.getElementById('loading-message');
+        if (loadingMessageElement && this.loadingMessages[index]) {
+            loadingMessageElement.textContent = this.loadingMessages[index];
+        }
+    },
+    
+    // Método legacy para compatibilidad
+    handlePageLoading() {
+        if (this.isInitialized) {
+            this.checkIfPageIsReady();
+            return;
+        }
+        
+        // Fallback para el sistema anterior
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const mainContent = document.getElementById('main-content');
+        
+        if (loadingSpinner && mainContent) {
+            loadingSpinner.classList.add('hidden');
+            mainContent.classList.add('page-loaded');
+            
             setTimeout(() => {
                 loadingSpinner.remove();
             }, 500);
             
-            Utils.log('Página cargada y spinner ocultado');
-        } else {
-            // Fallback: si no se encuentra el spinner o el contenido, mostrar todo inmediatamente
-            if (mainContent) {
-                mainContent.classList.add('page-loaded');
-            }
-            if (loadingSpinner) {
-                loadingSpinner.remove();
-            }
-            Utils.log('Fallback: contenido mostrado inmediatamente');
+            Utils.log('Página cargada (método legacy)');
         }
     }
 };
@@ -914,6 +1086,9 @@ const App = {
         try {
             Utils.log('Iniciando aplicación...');
             
+            // Inicializar el gestor de carga REAL
+            PageLoadingManager.init();
+            
             // Cargar header y footer
             await Promise.all([
                 HeaderFooterManager.loadHeader(),
@@ -954,17 +1129,17 @@ const App = {
             // Inicializar funcionalidades específicas de página
             this.initPageSpecificFeatures();
             
-            // Manejar la carga de la página (ocultar spinner, mostrar contenido)
-            PageLoadingManager.handlePageLoading();
+            // Monitorear carga de imágenes críticas (ahora manejado por PageLoadingManager)
+            this.monitorImageLoading();
             
             // Timeout de seguridad para ocultar spinner si algo falla
             setTimeout(() => {
                 const loadingSpinner = document.getElementById('loading-spinner');
                 if (loadingSpinner) {
                     Utils.log('Timeout de seguridad: ocultando spinner');
-                    PageLoadingManager.handlePageLoading();
+                    PageLoadingManager.hideLoadingSpinner();
                 }
-            }, 5000); // 5 segundos de timeout
+            }, 8000); // 8 segundos de timeout
             
             Utils.log('Aplicación inicializada exitosamente');
             
@@ -989,7 +1164,7 @@ const App = {
         const currentPage = Utils.getCurrentPage();
         
         // Inicializar FAQ de contacto
-        if (currentPage === 'contactanos.html') {
+        if (currentPage === 'Contactanos.html') {
             PageSpecificManager.initContactFAQ();
         }
         
@@ -997,6 +1172,13 @@ const App = {
         if (currentPage === 'Nosotros.html') {
             PageSpecificManager.initVisionSection();
         }
+    },
+    
+    // Monitorear la carga de imágenes críticas
+    monitorImageLoading() {
+        // Esta función ahora es manejada por PageLoadingManager
+        // Solo mantenemos un log para compatibilidad
+        Utils.log('Monitoreo de imágenes delegado al PageLoadingManager');
     }
 };
 
