@@ -5,8 +5,26 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'ScornoDemoBold';
+  src: url('/Fonts/scorno_demo.woff2') format('woff2'),
+       url('/Fonts/scorno_demo.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamBook';
+  src: url('/Fonts/Gothan_book.woff2') format('woff2'),
+       url('/Fonts/Gothan_book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 body, html {
-  font-family: "Gothan Book", sans-serif;
+  font-family: 'GothamBook', sans-serif;
 }
 
 body {
@@ -423,7 +441,7 @@ h2[style*="text-align:left"]::after,
 
 .hero-static-caption h1,
 .carousel-caption h1 {
-  font-family: 'Scorno demo', sans-serif;
+  font-family: 'ScornoDemoBold', sans-serif;
   color: white;
   font-size: 5rem;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
