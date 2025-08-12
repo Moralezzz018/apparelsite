@@ -191,7 +191,7 @@ const HeaderFooterManager = {
                         <li><a href="Responsabilidades.html">RESPONSABILIDADES</a></li>
                         <li><a href="Noticias.html">NOTICIAS</a></li>
                         <li><a href="Empleos.html">EMPLEOS</a></li>
-                        <li><a href="Contactanos.html">CONTÁCTANOS</a></li>
+                        <li><a href="contactanos.html">CONTÁCTANOS</a></li>
                     </ul>
                 </nav>
                 
