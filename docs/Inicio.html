@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Inicio | Los Pinos Apparel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Styles/Responsabilidades.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/Styles/styles.css" />
+    <script src="/Scripts/Java.js"></script>
+    <style>
+      /* Estilos para el estado de carga inicial */
+      .page-loading {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      
+      .page-loaded {
+        opacity: 1;
+      }
+      
+      /* Spinner de carga */
+      .loading-spinner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+      
+      .loading-spinner.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner de carga -->
+    <div class="loading-spinner" id="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+    
+    <div id="header-container"></div>
+    <!-- Contenedor para el carrusel dinámico -->
+    <div id="carousel-container"></div>
+    
+    <!-- Contenedor principal del contenido -->
+    <div id="main-content" class="page-loading">
+      <!-- Parrafo 1 -->
+      <section class="parrafo1">
+        <h1>Manufactura de alta calidad</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
+          perspiciatis repellat voluptatibus expedita! Animi dolore veritatis ex
+          sunt, ipsa eius dolores consequatur eveniet quia distinctio harum
+          recusandae magni nemo mollitia commodi culpa cupiditate suscipit est,
+          corrupti libero eum qui. Ipsam suscipit repellat reprehenderit odit
+          consequatur autem debitis non aspernatur eos?
+        </p>
+      </section>
+
+      <!-- Parrafo 2 -->
+
+      <section class="dosColumnas">
+        <div class="foto-columnas">
+          <img src="/Imagenes/Inicio - 2.webp" alt="FotoColumnas" />
+        </div>
+        <div class="Texto2Columnas">
+          <h2>Nuestra Empresa</h2>
+          <p>
+            Nuestra filosofía reconoce que el recurso más valorable e importante
+            son nuestros miembros y el compromiso de los mismos a la excelencia,
+            su orientación de servicio al cliente es un compromiso de todos.
+          </p>
+          <a href="Nosotros.html">
+            <button class="boton">Conozca Más</button>
+          </a>
+        </div>
+      </section>
+      <!-- Parrafo 3 -->
+      <section class="parrafo3">
+        <h1>Información</h1>
+        <p>
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum."
+        </p>
+      </section>
+      <!-- Tarjetas -->
+
+      <!-- Sección de Responsabilidades -->
+      <section class="responsabilidades">
+        <div class="container">
+          <h2 class="responsabilidades-titulo">Responsabilidades</h2>
+          <div class="tarjetas-grid">
+            <div class="tarjeta">
+              <div class="tarjeta-imagen">
+                <img src="/Imagenes/inicio - 3.webp" alt="Medio Ambiente" />
+              </div>
+              <div class="tarjeta-contenido">
+                <h3>Medio Ambiente</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <button class="boton responsabilidad-btn" data-responsabilidad="medio-ambiente">Ver Más</button>
+              </div>
+            </div>
+
+            <div class="tarjeta">
+              <div class="tarjeta-imagen">
+                <img src="/Imagenes/inicio - 4.webp" alt="Salud" />
+              </div>
+              <div class="tarjeta-contenido">
+                <h3>Salud</h3>
+                <p>
+                  We offer a range of specialized services tailored to meet your
+                  individual needs.
+                </p>
+                <button class="boton responsabilidad-btn" data-responsabilidad="salud">Ver Más</button>
+              </div>
+            </div>
+
+            <div class="tarjeta">
+              <div class="tarjeta-imagen">
+                <img src="/Imagenes/inicio - 5.webp" alt="Integridad" />
+              </div>
+              <div class="tarjeta-contenido">
+                <h3>Integridad</h3>
+                <p>
+                  We offer a range of specialized services tailored to meet your
+                  individual needs.
+                </p>
+                <button class="boton responsabilidad-btn" data-responsabilidad="integridad">Ver Más</button>
+              </div>
+            </div>
+
+            <div class="tarjeta">
+              <div class="tarjeta-imagen">
+                <img src="/Imagenes/inicio - 6.webp" alt="Transparencia" />
+              </div>
+              <div class="tarjeta-contenido">
+                <h3>Transparencia</h3>
+                <p>
+                  We offer a range of specialized services tailored to meet your
+                  individual needs.
+                </p>
+                <button class="boton responsabilidad-btn" data-responsabilidad="transparencia">Ver Más</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Área de contenido dinámico -->
+          <div class="responsabilidad-contenido" id="responsabilidad-contenido">
+            <div class="contenido-placeholder">
+              <h3>Selecciona una responsabilidad para ver más información</h3>
+              <p>Haz clic en cualquiera de los botones "Ver Más" de las tarjetas arriba para explorar nuestros compromisos en detalle.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video -->
+      <section class="videoYT">
+        <h1>Video</h1>
+        <div class="video-container">
+          <iframe
+            width="1080"
+            height="820"
+            src="https://www.youtube.com/embed/Fw77fjz6FWs"
+            title="Amazing Fabric Processing Factory in Korea Top 6"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+    </div>
+    
+    <div id="footer-container"></div>
+
+
+
+    <script>
+      // Datos de las responsabilidades
+      const responsabilidadesData = {
+        'medio-ambiente': {
+          titulo: 'Medio Ambiente',
+          imagen: '/Imagenes/inicio - 3.webp',
+          descripcion: 'En Los Pinos Apparel, estamos comprometidos con la sostenibilidad y la protección del medio ambiente. Nuestras prácticas responsables incluyen el uso de materiales eco-friendly, procesos de producción eficientes y la reducción de nuestra huella de carbono.',
+          caracteristicas: [
+            {
+              titulo: 'Sostenibilidad',
+              descripcion: 'Utilizamos materiales reciclados y procesos que minimizan el impacto ambiental en toda nuestra cadena de producción.'
+            },
+            {
+              titulo: 'Eficiencia Energética',
+              descripcion: 'Nuestras instalaciones están equipadas con tecnología de última generación para optimizar el consumo energético.'
+            },
+            {
+              titulo: 'Reducción de Residuos',
+              descripcion: 'Implementamos programas de reciclaje y reutilización para minimizar los desechos en nuestros procesos productivos.'
+            }
+          ]
+        },
+        'salud': {
+          titulo: 'Salud y Seguridad',
+          imagen: '/Imagenes/inicio - 4.webp',
+          descripcion: 'La salud y seguridad de nuestros empleados es nuestra máxima prioridad. Mantenemos los más altos estándares de seguridad laboral y bienestar en todas nuestras operaciones.',
+          caracteristicas: [
+            {
+              titulo: 'Seguridad Laboral',
+              descripcion: 'Implementamos protocolos rigurosos de seguridad y proporcionamos equipos de protección personal de alta calidad.'
+            },
+            {
+              titulo: 'Bienestar Empleado',
+              descripcion: 'Ofrecemos programas de salud preventiva, chequeos médicos regulares y un ambiente de trabajo saludable.'
+            },
+            {
+              titulo: 'Capacitación Continua',
+              descripcion: 'Nuestro personal recibe formación constante en temas de seguridad y mejores prácticas laborales.'
+            }
+          ]
+        },
+        'integridad': {
+          titulo: 'Integridad',
+          imagen: '/Imagenes/inicio - 5.webp',
+          descripcion: 'La integridad es el pilar fundamental de nuestra empresa. Actuamos con honestidad, transparencia y ética en todas nuestras relaciones comerciales y operaciones.',
+          caracteristicas: [
+            {
+              titulo: 'Ética Empresarial',
+              descripcion: 'Mantenemos los más altos estándares éticos en todas nuestras decisiones y acciones empresariales.'
+            },
+            {
+              titulo: 'Responsabilidad Social',
+              descripcion: 'Contribuimos activamente al desarrollo de nuestras comunidades y al bienestar social.'
+            },
+            {
+              titulo: 'Cumplimiento Normativo',
+              descripcion: 'Cumplimos rigurosamente con todas las regulaciones y estándares de la industria textil.'
+            }
+          ]
+        },
+        'transparencia': {
+          titulo: 'Transparencia',
+          imagen: '/Imagenes/inicio - 6.webp',
+          descripcion: 'Creemos en la transparencia total en nuestras operaciones. Compartimos abiertamente información sobre nuestros procesos, políticas y resultados con todos nuestros stakeholders.',
+          caracteristicas: [
+            {
+              titulo: 'Comunicación Abierta',
+              descripcion: 'Mantenemos canales de comunicación transparentes con empleados, clientes y proveedores.'
+            },
+            {
+              titulo: 'Reportes Públicos',
+              descripcion: 'Publicamos regularmente reportes sobre nuestro desempeño social, ambiental y financiero.'
+            },
+            {
+              titulo: 'Acceso a Información',
+              descripcion: 'Proporcionamos fácil acceso a información relevante sobre nuestras operaciones y políticas.'
+            }
+          ]
+        }
+      };
+
+      // Función para mostrar contenido de responsabilidad
+      function mostrarResponsabilidad(tipo) {
+        const contenidoContainer = document.getElementById('responsabilidad-contenido');
+        const data = responsabilidadesData[tipo];
+        
+        if (!data) return;
+
+        const caracteristicasHTML = data.caracteristicas.map(caracteristica => `
+          <div class="responsabilidad-caracteristica">
+            <h4>${caracteristica.titulo}</h4>
+            <p>${caracteristica.descripcion}</p>
+          </div>
+        `).join('');
+
+        const contenidoHTML = `
+          <div class="responsabilidad-detalle">
+            <div class="responsabilidad-header">
+              <h2>${data.titulo}</h2>
+            </div>
+            <div class="responsabilidad-body">
+              <div class="responsabilidad-imagen">
+                <img src="${data.imagen}" alt="${data.titulo}" />
+              </div>
+              <div class="responsabilidad-info">
+                <div class="responsabilidad-descripcion">
+                  <p>${data.descripcion}</p>
+                </div>
+                <div class="responsabilidad-caracteristicas">
+                  ${caracteristicasHTML}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        contenidoContainer.innerHTML = contenidoHTML;
+        
+        // Agregar clase para animación
+        contenidoContainer.classList.add('activo');
+        
+        // Scroll suave hacia el contenido
+        contenidoContainer.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      }
+
+      // Event listeners para los botones de responsabilidades
+      document.addEventListener('DOMContentLoaded', function() {
+        const responsabilidadButtons = document.querySelectorAll('.responsabilidad-btn');
+        
+        responsabilidadButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const tipo = this.getAttribute('data-responsabilidad');
+            
+            // Remover clase activa de todos los botones
+            responsabilidadButtons.forEach(btn => btn.classList.remove('activo'));
+            
+            // Agregar clase activa al botón clickeado
+            this.classList.add('activo');
+            
+            // Mostrar contenido
+            mostrarResponsabilidad(tipo);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empleos | Los Pinos Apparel</title>
+    <link rel="stylesheet" href="/Styles/styles.css" />
+    <link rel="stylesheet" href="/Styles/Empleos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="/Scripts/Java.js"></script>
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-static">
+      <div class="hero-static-container">
+        <img
+          src="/Imagenes/Hero-Empleos.jpeg"
+          alt="Empleos"
+          class="hero-static-image"
+        />
+        <div class="hero-static-caption"></div>
+      </div>
+    </section>
+
+    <section class="empleos-seccion">
+      <div class="container">
+        <h2 class="empleos-titulo">Empleos</h2>
+        <div class="empleos-grid">
+          <div class="empleo-card">
+            <div class="empleo-card-contenido">
+              <h3 class="empleo-titulo">Corte</h3>
+              <p class="empleo-descripcion">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Blanditiis et soluta suscipit architecto nisi mollitia, placeat
+                quia, deleniti aliquid voluptatum eligendi dolore? Quibusdam
+                veniam tenetur expedita labore consequuntur, in mollitia!
+              </p>
+            </div>
+            <div class="empleo-imagen">
+              <img src="/Imagenes/Empleos1.jpeg" alt="Corte" />
+            </div>
+          </div>
+
+          <div class="empleo-card">
+            <div class="empleo-card-contenido">
+              <h3 class="empleo-titulo">Operario</h3>
+              <p class="empleo-descripcion">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Exercitationem praesentium repellendus eos dolores? Quo harum
+                iure incidunt? Ab animi, accusantium dolorum rem dicta obcaecati
+                cum excepturi! Pariatur asperiores eum corporis.
+              </p>
+            </div>
+            <div class="empleo-imagen">
+              <img src="/Imagenes/Empleos2.jpeg" alt="Operario" />
+            </div>
+          </div>
+
+          <div class="empleo-card">
+            <div class="empleo-card-contenido">
+              <h3 class="empleo-titulo">Logística</h3>
+              <p class="empleo-descripcion">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore iure quae laboriosam, eligendi similique recusandae
+                temporibus, odio itaque illum ipsum, excepturi beatae soluta
+                dolores saepe? Tenetur atque sed possimus maiores.
+              </p>
+            </div>
+            <div class="empleo-imagen">
+              <img src="/Imagenes/Empleos3.jpeg" alt="Logística" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto-formulario" class="contacto-formulario">
+      <div class="container">
+        <h2>Solicitud de Empleo</h2>
+        <form class="formulario-contacto" onsubmit="enviarEmail(event)">
+          <div class="form-grupo">
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Nombre"
+              required
+            />
+          </div>
+          <div class="form-grupo">
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              placeholder="Correo Electrónico"
+              required
+            />
+          </div>
+          <div class="form-grupo">
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="Describenos tu experiencia y tus intereses en el area de trabajo"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <div class="form-botones">
+            <button type="submit" class="boton-enviar">Solicitar</button>
+            <button
+              type="button"
+              class="boton-ubicacion"
+              onclick="mostrarMapa()"
+            >
+              Ver ubicación
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Área de contenido dinámico del mapa -->
+    <div class="mapa-contenido" id="mapa-contenido">
+      <div class="contenido-placeholder">
+        <h3>Haz clic en "Ver ubicación" para ver nuestro mapa</h3>
+        <p>
+          Descubre dónde nos encontramos y cómo llegar a nuestras instalaciones.
+        </p>
+      </div>
+    </div>
+
+    <div id="footer-container"></div>
+  </body>
+</html>
