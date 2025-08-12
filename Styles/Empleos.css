@@ -273,9 +273,10 @@
 }
 
 .mapa-contenido .contenido-placeholder p {
-  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  font-size: 1.15rem !important;
   color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
+  line-height: 1.7 !important;
+  text-align: center !important;
 }
 
 /* ========================================

@@ -122,8 +122,8 @@ html, body {
 }
 
 .tarjeta-contenido p {
-  font-size: clamp(0.9rem, 1.6vw, 0.95rem);
-  line-height: 1.5;
+  font-size: 1.15rem !important;
+  line-height: 1.7 !important;
   margin-bottom: 1.25rem;
   color: #666;
 }

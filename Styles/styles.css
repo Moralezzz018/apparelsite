@@ -6,7 +6,7 @@
 }
 
 body, html {
-  font-family: "Lato", sans-serif;
+  font-family: "Gothan Book", sans-serif;
 }
 
 body {
@@ -14,6 +14,57 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* ========================================
+   ESTILOS GLOBALES DE TEXTO
+   ======================================== */
+/* Todos los párrafos justificados y con letra más grande */
+p {
+  text-align: justify !important;
+  font-size: 1.15rem !important; /* Aumentado de ~1rem a 1.15rem */
+  line-height: 1.7 !important;
+}
+
+/* Subtítulos h3 compensados para mantener jerarquía visual */
+h3 {
+  font-size: 1.4rem !important; /* Aumentado para compensar párrafos más grandes */
+  font-weight: 700 !important;
+  margin-bottom: 15px !important;
+  line-height: 1.3 !important;
+}
+
+/* Excepciones para elementos que deben mantenerse centrados */
+.carousel-caption p,
+.footer-column p,
+.loading-text,
+.progress-text,
+.contenido-placeholder p,
+.fila.texto-solo p {
+  text-align: center !important;
+}
+
+/* Ajustes responsivos para textos */
+@media (max-width: 768px) {
+  p {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  h3 {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  p {
+    font-size: 1.05rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  h3 {
+    font-size: 1.2rem !important;
+  }
 }
 
 /* ========================================
@@ -372,20 +423,21 @@ h2[style*="text-align:left"]::after,
 
 .hero-static-caption h1,
 .carousel-caption h1 {
+  font-family: 'Scorno demo', sans-serif;
   color: white;
-  font-size: 3rem;
+  font-size: 5rem;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   animation: captionAnimation 1s ease-out forwards;
   animation-delay: 0.3s;
   opacity: 0;
   transform: translateY(20px);
-  -webkit-text-stroke: 2px black;
+  /*-webkit-text-stroke: 2px black;*/
 }
 
-.carousel-caption h1 {
+/*.carousel-caption h1 {
   -webkit-text-stroke: 2px black;
 }
-
+*/
 @keyframes captionAnimation {
   0% {
     opacity: 0;
@@ -1358,7 +1410,7 @@ h2[style*="text-align:left"]::after,
   .carousel-caption h1 {
     font-size: 3rem !important;
     line-height: 1.2 !important;
-    -webkit-text-stroke: 2px black;
+    /*-webkit-text-stroke: 2px black;*/
   }
   
   /* Removido el contenido duplicado de ::before y ::after para evitar duplicación de texto */
@@ -1670,7 +1722,7 @@ h2[style*="text-align:left"]::after,
   /* Hero responsive */
   .carousel-caption h1 {
     font-size: 2.5rem !important;
-    -webkit-text-stroke: 2px black;
+    /*-webkit-text-stroke: 2px black;*/
   }
   
   .prev, .next {
@@ -1819,7 +1871,7 @@ h2[style*="text-align:left"]::after,
   /* Hero responsive */
   .carousel-caption h1 {
     font-size: 2rem !important;
-    -webkit-text-stroke: 2px black;
+    /*-webkit-text-stroke: 2px black;*/
   }
   
   .parrafo1, .parrafo3 {
@@ -1950,7 +2002,7 @@ h2[style*="text-align:left"]::after,
   
   .carousel-caption h1 {
     font-size: 2.5rem !important;
-    -webkit-text-stroke: 2px black;
+    /*-webkit-text-stroke: 2px black;*/
   }
   
   .dosColumnas {
