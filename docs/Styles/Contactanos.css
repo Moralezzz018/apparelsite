@@ -272,6 +272,7 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Mejorar la interactividad del FAQ */
 .faq-pregunta {
   padding: 25px 30px;
   background: linear-gradient(135deg, var(--contacto-primary), var(--contacto-secondary));
@@ -281,23 +282,61 @@
   justify-content: space-between;
   align-items: center;
   transition: var(--contacto-transition);
+  user-select: none; /* Prevenir selección de texto */
+  position: relative; /* Para efectos hover */
 }
 
-.faq-pregunta:hover {
-  background: linear-gradient(135deg, var(--contacto-secondary), var(--contacto-primary));
+.faq-pregunta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.faq-pregunta:hover::before {
+  opacity: 1;
+}
+
+.faq-pregunta:active {
+  transform: scale(0.98);
 }
 
 .faq-pregunta h3 {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0;
+  pointer-events: none; /* Prevenir interferencia con el click */
 }
 
+/* Asegurar que el icono rote correctamente */
 .faq-pregunta i {
   font-size: 1.2rem;
-  transition: var(--contacto-transition);
+  transition: transform 0.3s ease;
+  pointer-events: none; /* Prevenir interferencia con el click */
+  transform-origin: center;
 }
 
+/* Estado activo del FAQ */
+.faq-item.activo .faq-pregunta {
+  background: linear-gradient(135deg, var(--contacto-secondary), var(--contacto-primary));
+}
+
+.faq-item.activo .faq-pregunta i {
+  transform: rotate(180deg);
+}
+
+/* Estado activo de la respuesta */
+.faq-item.activo .faq-respuesta {
+  max-height: 200px; /* Altura máxima para la animación */
+}
+
+/* Asegurar que la transición sea suave */
 .faq-respuesta {
   max-height: 0;
   overflow: hidden;

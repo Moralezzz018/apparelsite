@@ -77,7 +77,7 @@ const PageManager = {
             carouselType: null,
             initFunction: null
         },
-        'Contactanos.html': {
+        'contactanos.html': {
             hasCarousel: false,
             carouselType: null,
             initFunction: 'initContactFAQ'
@@ -679,29 +679,65 @@ const PageSpecificManager = {
     // Inicializar FAQ de contacto
     initContactFAQ() {
         const faqQuestions = document.querySelectorAll('.faq-pregunta');
-        if (faqQuestions.length === 0) return;
+        console.log('🔍 Buscando elementos FAQ:', faqQuestions.length);
+        console.log('🔍 Elementos encontrados:', faqQuestions);
         
-        Utils.log('Inicializando FAQ de contacto...');
+        if (faqQuestions.length === 0) {
+            Utils.log('No se encontraron elementos FAQ para inicializar', 'warn');
+            return;
+        }
         
-        faqQuestions.forEach(pregunta => {
-            pregunta.addEventListener('click', () => {
+        Utils.log(`Inicializando FAQ de contacto con ${faqQuestions.length} elementos...`);
+        
+        faqQuestions.forEach((pregunta, index) => {
+            console.log(`🔍 Procesando FAQ ${index + 1}:`, pregunta);
+            
+            // Remover event listeners existentes para evitar duplicados
+            pregunta.removeEventListener('click', pregunta.faqClickHandler);
+            
+            // Crear nuevo event listener
+            pregunta.faqClickHandler = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
                 const faqItem = pregunta.parentElement;
                 const respuesta = faqItem.querySelector('.faq-respuesta');
                 const icon = pregunta.querySelector('i');
                 
+                if (!faqItem || !respuesta || !icon) {
+                    Utils.log('Elementos del FAQ no encontrados', 'error');
+                    return;
+                }
+                
+                Utils.log(`FAQ ${index + 1} clickeado, estado actual: ${faqItem.classList.contains('activo')}`);
+                
+                // Toggle del estado activo
+                const isActive = faqItem.classList.contains('activo');
                 faqItem.classList.toggle('activo');
                 
-                if (faqItem.classList.contains('activo')) {
+                if (!isActive) {
+                    // Abrir FAQ
                     respuesta.style.maxHeight = respuesta.scrollHeight + 'px';
                     icon.style.transform = 'rotate(180deg)';
+                    Utils.log(`FAQ ${index + 1} abierto`);
                 } else {
+                    // Cerrar FAQ
                     respuesta.style.maxHeight = '0';
                     icon.style.transform = 'rotate(0deg)';
+                    Utils.log(`FAQ ${index + 1} cerrado`);
                 }
-            });
+            };
+            
+            // Agregar event listener
+            pregunta.addEventListener('click', pregunta.faqClickHandler);
+            
+            // Agregar indicador visual de que es clickeable
+            pregunta.style.cursor = 'pointer';
+            
+            Utils.log(`FAQ ${index + 1} inicializado correctamente`);
         });
         
-        Utils.log('FAQ de contacto inicializado');
+        Utils.log('FAQ de contacto inicializado exitosamente');
     },
     
     // Inicializar sección Visión
@@ -953,7 +989,7 @@ const App = {
         const currentPage = Utils.getCurrentPage();
         
         // Inicializar FAQ de contacto
-        if (currentPage === 'Contactanos.html') {
+        if (currentPage === 'contactanos.html') {
             PageSpecificManager.initContactFAQ();
         }
         
