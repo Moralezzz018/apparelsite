@@ -77,7 +77,7 @@ const PageManager = {
             carouselType: null,
             initFunction: null
         },
-        'contactanos.html': {
+        'Contactanos.html': {
             hasCarousel: false,
             carouselType: null,
             initFunction: 'initContactFAQ'
@@ -989,7 +989,7 @@ const App = {
         const currentPage = Utils.getCurrentPage();
         
         // Inicializar FAQ de contacto
-        if (currentPage === 'contactanos.html') {
+        if (currentPage === 'Contactanos.html') {
             PageSpecificManager.initContactFAQ();
         }
         
