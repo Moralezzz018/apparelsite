@@ -255,6 +255,30 @@ const HeaderFooterManager = {
     }
 };
 
+function enviarEmail(event) {
+    event.preventDefault();
+  
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+    const mensaje = document.getElementById('mensaje').value;
+  
+    fetch('http://10.10.20.26:3000/api/contacto', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ nombre, correo, mensaje })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.mensaje || '¡Datos enviados correctamente!');
+    })
+    .catch(error => {
+      alert('Error al enviar los datos');
+      console.error(error);
+    });
+  }
+
 // ========================================
 // GESTOR DE CARRUSELES
 // ========================================
