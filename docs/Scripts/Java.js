@@ -262,7 +262,7 @@ function enviarEmail(event) {
     const correo = document.getElementById('correo').value;
     const mensaje = document.getElementById('mensaje').value;
   
-    fetch('http://10.10.20.26:3000/api/contacto', {
+    fetch('http://10.10.20.26:3306/api/contacto', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
