@@ -255,29 +255,58 @@ const HeaderFooterManager = {
     }
 };
 
+// Función para enviar email
 function enviarEmail(event) {
     event.preventDefault();
   
     const nombre = document.getElementById('nombre').value;
-    const correo = document.getElementById('correo').value;
+    const email = document.getElementById('email').value;
     const mensaje = document.getElementById('mensaje').value;
+  
+    // Validar que los campos requeridos estén llenos
+    if (!nombre || !email || !mensaje) {
+      alert('Por favor, completa todos los campos requeridos');
+      return;
+    }
+  
+    console.log('Enviando datos:', { nombre, email, mensaje });
   
     fetch('http://10.10.20.26:3000/api/contacto', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ nombre, correo, mensaje })
+      body: JSON.stringify({ nombre, correo: email, mensaje })
     })
-    .then(response => response.json())
+    .then(response => {
+      console.log('Respuesta del servidor:', response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(data => {
+      console.log('Datos recibidos:', data);
       alert(data.mensaje || '¡Datos enviados correctamente!');
+      // Limpiar el formulario después del envío exitoso
+      document.getElementById('contacto-form').reset();
     })
     .catch(error => {
-      alert('Error al enviar los datos');
-      console.error(error);
+      console.error('Error completo:', error);
+      alert('Error al enviar los datos: ' + error.message);
     });
   }
+
+// Función para inicializar el formulario de contacto
+function initContactForm() {
+    const form = document.getElementById('contacto-form');
+    if (form) {
+        form.addEventListener('submit', enviarEmail);
+        console.log('Formulario de contacto inicializado');
+    } else {
+        console.log('Formulario de contacto no encontrado');
+    }
+}
 
 // ========================================
 // GESTOR DE CARRUSELES
@@ -694,6 +723,11 @@ const PageSpecificManager = {
             header.classList.add('scrolled');
             Utils.log('Header configurado como estático para página de contacto');
         }
+        
+        // Inicializar formulario de contacto
+        setTimeout(() => {
+            initContactForm();
+        }, 100);
         
         // Inicializar FAQ si existe
         setTimeout(() => {
