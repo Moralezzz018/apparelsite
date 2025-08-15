@@ -271,7 +271,7 @@ function enviarEmail(event) {
   
     console.log('Enviando datos de contacto:', { nombre, email, mensaje });
   
-    fetch('https://10.10.20.26:3000/api/contacto', {
+    fetch('http://10.10.20.26:3000/api/contacto', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -314,7 +314,7 @@ function enviarSolicitudEmpleo(event) {
   
     console.log('Enviando solicitud de empleo:', { nombre, correo, mensaje });
   
-    fetch('https://10.10.20.26:3000/api/contacto', {
+    fetch('http://10.10.20.26:3000/api/contacto', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
