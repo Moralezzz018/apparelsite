@@ -255,7 +255,7 @@ const HeaderFooterManager = {
     }
 };
 
-// Función para enviar email
+// Función para enviar email (formulario de contacto)
 function enviarEmail(event) {
     event.preventDefault();
   
@@ -269,7 +269,7 @@ function enviarEmail(event) {
       return;
     }
   
-    console.log('Enviando datos:', { nombre, email, mensaje });
+    console.log('Enviando datos de contacto:', { nombre, email, mensaje });
   
     fetch('http://10.10.20.26:3000/api/contacto', {
       method: 'POST',
@@ -289,11 +289,55 @@ function enviarEmail(event) {
       console.log('Datos recibidos:', data);
       alert(data.mensaje || '¡Datos enviados correctamente!');
       // Limpiar el formulario después del envío exitoso
-      document.getElementById('contacto-form').reset();
+      const form = event.target;
+      if (form) form.reset();
     })
     .catch(error => {
       console.error('Error completo:', error);
       alert('Error al enviar los datos: ' + error.message);
+    });
+  }
+
+// Función para enviar solicitud de empleo
+function enviarSolicitudEmpleo(event) {
+    event.preventDefault();
+  
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+    const mensaje = document.getElementById('mensaje').value;
+  
+    // Validar que los campos requeridos estén llenos
+    if (!nombre || !correo || !mensaje) {
+      alert('Por favor, completa todos los campos requeridos');
+      return;
+    }
+  
+    console.log('Enviando solicitud de empleo:', { nombre, correo, mensaje });
+  
+    fetch('http://10.10.20.26:3000/api/contacto', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ nombre, correo, mensaje })
+    })
+    .then(response => {
+      console.log('Respuesta del servidor:', response);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Datos recibidos:', data);
+      alert(data.mensaje || '¡Solicitud enviada correctamente!');
+      // Limpiar el formulario después del envío exitoso
+      const form = event.target;
+      if (form) form.reset();
+    })
+    .catch(error => {
+      console.error('Error completo:', error);
+      alert('Error al enviar la solicitud: ' + error.message);
     });
   }
 
