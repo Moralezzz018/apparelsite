@@ -271,7 +271,7 @@ function enviarEmail(event) {
   
     console.log('Enviando datos de contacto:', { nombre, email, mensaje });
   
-    fetch('http://10.10.20.26:3000/api/contacto', {
+    fetch('https://10.10.20.26:3000/api/contacto', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
