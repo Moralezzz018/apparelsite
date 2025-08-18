@@ -8,6 +8,9 @@ const CONFIG = {
     SCROLL_THRESHOLD: 50
 };
 
+//REINICIAR CACHE DE LA WEB
+//window.location.reload();
+
 // ========================================
 // UTILIDADES
 // ========================================

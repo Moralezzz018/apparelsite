@@ -199,10 +199,6 @@ h2[style*="text-align:left"]::after,
   height: 60px;
 }
 
-/* Logo sin animación para mejor rendimiento */
-.logo {
-  /* Animación removida para mejorar velocidad de carga */
-}
 
 /* Navegación */
 .nav-menu ul {
@@ -247,11 +243,6 @@ h2[style*="text-align:left"]::after,
   color: #183206 !important;
   border-bottom: 2px solid #183206;
   background-color: rgba(24, 50, 6, 0.1);
-}
-
-/* Menú sin animación para mejor rendimiento */
-.nav-menu {
-  /* Animación removida para mejorar velocidad de carga */
 }
 
 /* ========================================
