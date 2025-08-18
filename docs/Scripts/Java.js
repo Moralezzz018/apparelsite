@@ -1162,11 +1162,11 @@ function mostrarMapa() {
                     </div>
                     <div class="mapa-info">
                         <h3>Información de Contacto</h3>
-                        <p class="direccion">Alamode S.A.</p>
+                        <p class="direccion">Los Pinos Apparel S.A.</p>
                         <p>Siguatepeque, Honduras</p>
                         <p>Teléfono: +504 27773-5353</p>
                         <p>Email: karen.cruz@gkglobal.com</p>
-                        <p>Horario: Lunes a Viernes 8:00 AM - 5:00 PM</p>
+                        <p>Horario: Lunes a Viernes 8:00 AM - 4:00 PM</p>
                     </div>
                     <button class="Redireccionar" onclick="window.location.href='contactanos.html'">Ir a Contáctanos</button>
                 </div>
