@@ -1,0 +1,213 @@
+/* ===========================
+   GLOBAL.CSS (OPTIMIZADO)
+   =========================== */
+
+/* Reset y fuentes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @font-face {
+    font-family: 'ScornoDemoBold';
+    src: url('/Fonts/scorno_demo.woff2') format('woff2'),
+         url('/Fonts/scorno_demo.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GothamBook';
+    src: url('/Fonts/Gothan_book.woff2') format('woff2'),
+         url('/Fonts/Gothan_book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  html, body {
+    font-family: 'GothamBook', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  
+  /* ===========================
+     Textos globales
+     =========================== */
+  p {
+    text-align: justify;
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+  
+  h2 {
+    position: relative;
+  }
+  
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #183206;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+  
+  /* Excepciones de texto centrado */
+  .carousel-caption p,
+  .footer-column p,
+  .loading-text,
+  .progress-text,
+  .contenido-placeholder p,
+  .fila.texto-solo p {
+    text-align: center;
+  }
+  
+  /* ===========================
+     Header / Navegación
+     =========================== */
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .main-header.scrolled {
+    background: #e6e6e6;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .logo img { height: 60px; }
+  
+  /* Menú */
+  .nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu a:hover {
+    border-bottom: 2px solid white;
+  }
+  
+  .nav-menu a.active {
+    color: white;
+    border-bottom: 2px solid white;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+  }
+  
+  .main-header.scrolled .nav-menu a { color: black; }
+  .main-header.scrolled .nav-menu a:hover { border-bottom: 2px solid black; }
+  .main-header.scrolled .nav-menu a.active {
+    color: #183206;
+    border-bottom: 2px solid #183206;
+    background-color: rgba(24,50,6,0.1);
+  }
+  
+  /* Botón menú hamburguesa */
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    transition: opacity .3s ease, visibility .3s ease, transform .3s ease;
+  }
+  
+  .hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: .3s;
+  }
+  
+  .main-header.scrolled .hamburger-menu span { background-color: black; }
+  
+  /* ===========================
+     Botones
+     =========================== */
+  .boton {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background .3s;
+  }
+  
+  .boton:hover { background-color: #555; }
+  
+  /* ===========================
+     Footer
+     =========================== */
+  .footer {
+    background-color: #183206;
+    color: white;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .footer-info {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+  }
+  
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .footer-bottom {
+    background-color: #e6e6e6;
+    color: black;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  

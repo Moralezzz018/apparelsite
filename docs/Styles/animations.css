@@ -1,0 +1,176 @@
+/* Animación principal del menú */
+.nav-menu {
+  animation: menuSlideIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+@keyframes menuSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación para cada enlace del menú individualmente */
+.nav-menu a {
+  animation: linkFadeIn 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Delays escalonados para cada enlace */
+.nav-menu a:nth-child(1) { animation-delay: 0.4s; }
+.nav-menu a:nth-child(2) { animation-delay: 0.5s; }
+.nav-menu a:nth-child(3) { animation-delay: 0.6s; }
+.nav-menu a:nth-child(4) { animation-delay: 0.7s; }
+.nav-menu a:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes linkFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA TÍTULOS DEL CARRUSEL
+   ======================================== */
+
+/* Animación para los títulos del carrusel */
+.hero-static-caption h1,
+.carousel-caption h1 {
+  animation: titleFadeIn 1.2s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes titleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   ANIMACIONES RESPONSIVAS
+   ======================================== */
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  /* Reducir delays en móviles para mejor experiencia */
+  .nav-menu {
+    animation-delay: 0.2s;
+  }
+  
+  .nav-menu a:nth-child(1) { animation-delay: 0.3s; }
+  .nav-menu a:nth-child(2) { animation-delay: 0.4s; }
+  .nav-menu a:nth-child(3) { animation-delay: 0.5s; }
+  .nav-menu a:nth-child(4) { animation-delay: 0.6s; }
+  .nav-menu a:nth-child(5) { animation-delay: 0.7s; }
+  
+  .hero-static-caption h1,
+  .carousel-caption h1 {
+    animation-delay: 0.3s;
+  }
+}
+
+/* Ajustes para dispositivos muy pequeños */
+@media (max-width: 480px) {
+  /* Animaciones más rápidas en pantallas pequeñas */
+  .nav-menu {
+    animation-duration: 0.6s;
+    animation-delay: 0.1s;
+  }
+  
+  .nav-menu a {
+    animation-duration: 0.4s;
+  }
+  
+  .nav-menu a:nth-child(1) { animation-delay: 0.2s; }
+  .nav-menu a:nth-child(2) { animation-delay: 0.3s; }
+  .nav-menu a:nth-child(3) { animation-delay: 0.4s; }
+  .nav-menu a:nth-child(4) { animation-delay: 0.5s; }
+  .nav-menu a:nth-child(5) { animation-delay: 0.6s; }
+  
+  .hero-static-caption h1,
+  .carousel-caption h1 {
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+  }
+}
+
+/* ========================================
+   ANIMACIONES ADICIONALES (OPCIONALES)
+   ======================================== */
+
+/* Efecto hover suave para enlaces del menú */
+.nav-menu a {
+  transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto de pulso sutil para títulos importantes */
+@keyframes subtlePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Aplicar pulso sutil a títulos del carrusel después de la animación inicial */
+.hero-static-caption h1.animated,
+.carousel-caption h1.animated {
+  animation: subtlePulse 3s ease-in-out infinite;
+  animation-delay: 2s; /* Comenzar después de la animación inicial */
+}
+
+/* ========================================
+   UTILIDADES DE ANIMACIÓN
+   ======================================== */
+
+/* Clase para deshabilitar animaciones si el usuario prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu,
+  .nav-menu a,
+  .hero-static-caption h1,
+  .carousel-caption h1 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Clase para animaciones más rápidas */
+.animations-fast .nav-menu {
+  animation-duration: 0.4s;
+}
+
+.animations-fast .nav-menu a {
+  animation-duration: 0.3s;
+}
+
+.animations-fast .hero-static-caption h1,
+.animations-fast .carousel-caption h1 {
+  animation-duration: 0.8s;
+}

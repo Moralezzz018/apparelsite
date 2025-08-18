@@ -1,0 +1,288 @@
+/* ===========================
+   NOSOTROS.CSS (OPTIMIZADO)
+   =========================== */
+
+/* ===========================
+   Sección Compromiso
+   =========================== */
+   .compromiso {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .compromiso img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .contenedor-compromiso {
+    position: relative;
+    z-index: 2;
+    background-color: #183206;
+    padding: 60px 80px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  }
+  
+  .contenedor-compromiso .titulo {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  /* ===========================
+     Sección Historia & Filosofía
+     =========================== */
+  .historia-filosofia {
+    background-color: #0c1a05;
+    color: white;
+    padding: 80px 0;
+  }
+  
+  .historia-filosofia .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  .historia-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 40px;
+  }
+  
+  .historia-texto, .filosofia-seccion {
+    flex: 1;
+  }
+  
+  .historia-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .historia-imagen img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  
+  .historia-texto h2,
+  .filosofia-seccion h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  
+  .historia-texto p,
+  .filosofia-seccion p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+  }
+  
+  .linea-divisoria {
+    background-color: #fff;
+    opacity: 0.3;
+  }
+  
+  .filosofia-seccion {
+    background-color: #2e600b;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  
+  /* ===========================
+     Sección Misión
+     =========================== */
+  .mision {
+    background-color: #0c1a05;
+    color: white;
+    padding: 80px 0;
+  }
+  
+  .mision .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  .mision-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .mision-texto { flex: 1; }
+  .mision-imagen { flex: 1; display: flex; justify-content: center; }
+  
+  .mision-imagen img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  
+  .mision-texto h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  
+  .mision-texto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f0f0f0;
+  }
+  
+  /* ===========================
+     Sección Visión
+     =========================== */
+  .vision {
+    background-color: #0c1a05;
+    color: white;
+    padding: 80px 0;
+  }
+  
+  .vision .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  .vision-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .vision-texto { flex: 1; }
+  .vision-imagen { flex: 1; display: flex; justify-content: center; }
+  
+  .vision-imagen img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  
+  .vision-texto h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  
+  .vision-texto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f0f0f0;
+  }
+  
+  /* ===========================
+     Sección Valores
+     =========================== */
+  .valores {
+    background-color: #0c1a05;
+    color: white;
+    padding: clamp(3rem, 5vw, 5rem) 0;
+  }
+  
+  .valores .container {
+    max-width: min(1600px, 95%);
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 2.5rem);
+  }
+  
+  .valores-titulo {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+  }
+  
+  .valores-titulo::after {
+    content: '';
+    display: block;
+    width: clamp(60px, 10vw, 80px);
+    height: 3px;
+    background-color: #fff;
+    margin: 0.8rem auto 0;
+  }
+  
+  .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px,100%), 1fr));
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .valor-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid #2a4a0a;
+    transition: all .4s ease;
+  }
+  
+  .valor-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+  
+  .valor-imagen {
+    width: 100%;
+    aspect-ratio: 1/0.75;
+    overflow: hidden;
+  }
+  
+  .valor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+  }
+  
+  .valor-item:hover .valor-imagen img {
+    transform: scale(1.08);
+  }
+  
+  .valor-contenido {
+    padding: clamp(1.25rem, 2vw, 1.75rem);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .valor-contenido h3 {
+    font-weight: 700;
+    color: #183206;
+    font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+  
+  .valor-contenido p {
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+    flex-grow: 1;
+  }
+  
