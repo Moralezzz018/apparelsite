@@ -1,0 +1,428 @@
+/**
+ * Animaciones CSS - Los Pinos Apparel
+ * 
+ * Este archivo contiene todas las animaciones del sitio web:
+ * - Animaciones para títulos del menú
+ * - Animaciones para títulos del carrusel
+ * - Animaciones de entrada para elementos
+ */
+
+/* ========================================
+   ANIMACIONES PARA TÍTULOS DEL MENÚ
+   ======================================== */
+
+/* Animación para títulos del menú principal */
+.nav-menu a {
+  position: relative;
+  transition: all 0.3s ease;
+  animation: menuTitleAnimation 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.nav-menu a:nth-child(1) { animation-delay: 0.1s; }
+.nav-menu a:nth-child(2) { animation-delay: 0.2s; }
+.nav-menu a:nth-child(3) { animation-delay: 0.3s; }
+.nav-menu a:nth-child(4) { animation-delay: 0.4s; }
+.nav-menu a:nth-child(5) { animation-delay: 0.5s; }
+.nav-menu a:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes menuTitleAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación para el logo */
+.logo {
+  animation: logoAnimation 1s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes logoAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA TÍTULOS DEL CARRUSEL
+   ======================================== */
+
+/* Animación para títulos del carrusel */
+.carousel-caption h1,
+.hero-static-caption h1 {
+  animation: carouselTitleAnimation 1.2s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+}
+
+@keyframes carouselTitleAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(15px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación para subtítulos del carrusel */
+.carousel-caption p,
+.hero-static-caption p {
+  animation: carouselSubtitleAnimation 1s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes carouselSubtitleAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA TÍTULOS DE SECCIONES
+   ======================================== */
+
+/* Animación para títulos de secciones principales */
+section h1,
+section h2 {
+  animation: sectionTitleAnimation 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes sectionTitleAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación para títulos de responsabilidades */
+.responsabilidades-titulo,
+.empleos-titulo,
+.valores-titulo {
+  animation: specialTitleAnimation 1s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  transform: translateY(25px) scale(0.95);
+}
+
+@keyframes specialTitleAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA ELEMENTOS DE ENTRADA
+   ======================================== */
+
+/* Animación para tarjetas y elementos de contenido */
+.tarjeta,
+.empleo-card,
+.valor-item,
+.contacto-card {
+  animation: cardAnimation 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.tarjeta:nth-child(1) { animation-delay: 0.2s; }
+.tarjeta:nth-child(2) { animation-delay: 0.3s; }
+.tarjeta:nth-child(3) { animation-delay: 0.4s; }
+.tarjeta:nth-child(4) { animation-delay: 0.5s; }
+
+.empleo-card:nth-child(1) { animation-delay: 0.2s; }
+.empleo-card:nth-child(2) { animation-delay: 0.3s; }
+.empleo-card:nth-child(3) { animation-delay: 0.4s; }
+
+.valor-item:nth-child(1) { animation-delay: 0.2s; }
+.valor-item:nth-child(2) { animation-delay: 0.3s; }
+.valor-item:nth-child(3) { animation-delay: 0.4s; }
+.valor-item:nth-child(4) { animation-delay: 0.5s; }
+.valor-item:nth-child(5) { animation-delay: 0.6s; }
+
+.contacto-card:nth-child(1) { animation-delay: 0.2s; }
+.contacto-card:nth-child(2) { animation-delay: 0.3s; }
+.contacto-card:nth-child(3) { animation-delay: 0.4s; }
+.contacto-card:nth-child(4) { animation-delay: 0.5s; }
+
+@keyframes cardAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA BOTONES
+   ======================================== */
+
+/* Animación para botones */
+.boton,
+.boton-enviar,
+.boton-ubicacion {
+  animation: buttonAnimation 0.5s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+@keyframes buttonAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA FORMULARIOS
+   ======================================== */
+
+/* Animación para campos de formulario */
+.form-grupo {
+  animation: formFieldAnimation 0.4s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.form-grupo:nth-child(1) { animation-delay: 0.1s; }
+.form-grupo:nth-child(2) { animation-delay: 0.2s; }
+.form-grupo:nth-child(3) { animation-delay: 0.3s; }
+.form-grupo:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes formFieldAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA IMÁGENES
+   ======================================== */
+
+/* Animación para imágenes principales */
+.hero-static-image,
+.carousel-item img {
+  animation: imageAnimation 1s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   ANIMACIONES PARA ELEMENTOS ESPECÍFICOS
+   ======================================== */
+
+/* Animación para el spinner de carga */
+.loading-spinner {
+  animation: spinnerFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes spinnerFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animación para el contenido principal */
+#main-content {
+  animation: mainContentAnimation 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes mainContentAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   ANIMACIONES RESPONSIVE
+   ======================================== */
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .nav-menu a {
+    animation-delay: 0.1s !important;
+  }
+  
+  .carousel-caption h1,
+  .hero-static-caption h1 {
+    animation-delay: 0.3s !important;
+  }
+  
+  .carousel-caption p,
+  .hero-static-caption p {
+    animation-delay: 0.5s !important;
+  }
+}
+
+/* ========================================
+   CLASES UTILITARIAS PARA ANIMACIONES
+   ======================================== */
+
+/* Clase para animar elementos manualmente */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Clase para animaciones de hover */
+.hover-animate {
+  transition: all 0.3s ease;
+}
+
+.hover-animate:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   ANIMACIONES PARA PÁGINAS ESPECÍFICAS
+   ======================================== */
+
+/* Animaciones específicas para la página de Responsabilidades */
+.responsabilidades-page .targeta-responsabilidad {
+  animation: responsabilidadCardAnimation 0.7s ease-out forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.responsabilidades-page .targeta-responsabilidad:nth-child(1) { animation-delay: 0.2s; }
+.responsabilidades-page .targeta-responsabilidad:nth-child(2) { animation-delay: 0.3s; }
+.responsabilidades-page .targeta-responsabilidad:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes responsabilidadCardAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animaciones específicas para la página de Empleos */
+.empleos-seccion .empleo-card {
+  animation: empleoCardAnimation 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.empleos-seccion .empleo-card:nth-child(1) { animation-delay: 0.2s; }
+.empleos-seccion .empleo-card:nth-child(2) { animation-delay: 0.4s; }
+.empleos-seccion .empleo-card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes empleoCardAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animaciones específicas para la página de Contacto */
+.contacto-info .contacto-card {
+  animation: contactoCardAnimation 0.6s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.contacto-info .contacto-card:nth-child(1) { animation-delay: 0.1s; }
+.contacto-info .contacto-card:nth-child(2) { animation-delay: 0.2s; }
+.contacto-info .contacto-card:nth-child(3) { animation-delay: 0.3s; }
+.contacto-info .contacto-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes contactoCardAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
